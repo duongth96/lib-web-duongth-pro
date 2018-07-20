@@ -1,0 +1,91 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+}
+#swapper{
+	padding: 20px;
+}
+div.rows,section.rows,article.rows{
+	width: 100%;
+	height: auto;
+}
+/*
+* some with: 50%-50%, 30%-70%<<, 35%-65%<<, 40%-60%<<.
+* khi them .side can them .clear
+*/
+.side{ /*side is side left, side right*/
+	width: 100%;
+	min-height: 10%;
+
+}
+/*
+* side 3-7
+*/
+.side .side-child-3-7:first-child{
+	width: 30%;
+}
+.side .side-child-3-7:last-child{
+	width: 70%;
+}
+.side .side-child-3-7-flip:first-child{
+	width: 70%;
+}
+.side .side-child-3-7-flip:last-child{
+	width: 30%;
+}
+/*
+* side 3.5-6.5
+*/
+.side .side-child-35-65:first-child{
+	width: 35%;
+}
+.side .side-child-35-65:last-child{
+	width: 65%;
+}
+.side .side-child-35-65-flip:first-child{
+	width: 65%;
+}
+.side .side-child-35-65-flip:last-child{
+	width: 35%;
+}
+/*
+* style for match-paren. header
+*/
+.match-paren{
+	display: block;
+	width: 100%;
+	height: auto
+}
+.wrap-content{
+	display: inline-block;
+}
+.header{
+	width: 100%;
+	height: auto;
+}
+.header p,.header h1,.header h2,.header h3,.header h4,.header p a,.header h1 a,.header h2 a,.header h3 a,.header h4 a{
+	color: #000;
+}
+/*
++ style for navs menu bar
+*/
+.navs{
+	width: 100%;
+	width: auto;
+	background-color: orange;
+}
+.navs ul{
+	margin:auto;
+	list-style: none;
+}
+.navs ul li{
+	display: block;
+	float: left;
+	height: 100%;
+	background-color: unset;
+}
+
+.clear{
+	clear: both;
+}

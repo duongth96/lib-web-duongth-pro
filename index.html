@@ -2,8 +2,46 @@
 <html>
 <head>
 	<title>This is demo index here !</title>
+	<script type="text/javascript" src="script/script-01.js"></script>
+	<link rel="stylesheet" href="css/style-01.css">
 </head>
 <body>
-
+	<div id="swapper">
+		* cách sử dụng match-paren và wrap-content <br>
+		- khi sử dụng match-paren thì element con sẽ có chiều rộng bằng element cha.<br>
+		- khi sử dụng wrap-content thì phần viền ngoài chỉ bảo bao quanh thành phần con bên trong.<br>
+		- VD:
+		<div class="rows">
+			<p class="match-paren" style="background-color: red">This is class match-paren</p>
+			<p class="wrap-content" style="background-color: blue">This is class wrap-content 1</p>
+			<p class="wrap-content" style="background-color: yellow">This is class wrap-content 2</p>
+		</div><br>
+		* cách sử dụng class header với thẻ p, h1 -> h4 <br>
+		- sử dụng có link hoặc không có link màu chữ mặc định đều màu đen.<br>
+		- VD:
+		<div class="rows">
+			<header class="header">
+				<h3>
+					<a href="#" title="This is header title">This is header title</a>
+				</h3>
+			</header><!-- /header -->
+		</div><br>
+		* cach sử dụng menu style ở mức cơ bản <br>
+		- sử dụng có link hoặc không có link màu chữ mặc định đều màu đen.<br>
+		- VD:
+		<div class="rows">
+			<nav class="navs">
+				<ul>
+					<li> <a href="#" title="item menu lv1">item menu lv1</a> </li>
+					<li> <a href="#" title="item menu lv1">item menu lv1</a> </li>
+					<li> <a href="#" title="item menu lv1">item menu lv1</a> </li>
+					<li> <a href="#" title="item menu lv1">item menu lv1</a> </li>
+					<li> <a href="#" title="item menu lv1">item menu lv1</a> </li>
+					<li> <a href="#" title="item menu lv1">item menu lv1</a> </li>
+					<p class="clear"></p>
+				</ul>
+			</nav>
+		</div><br>
+	</div>
 </body>
 </html>
