@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>This is demo index here !</title>
 	<script type="text/javascript" src="script/script-01.js"></script>
 	<link rel="stylesheet" href="css/style-01.css">
 </head>
 <body>
 	<div id="swapper">
-		* cách sử dụng match-paren và wrap-content <br>
-		- khi sử dụng match-paren thì element con sẽ có chiều rộng bằng element cha.<br>
-		- khi sử dụng wrap-content thì phần viền ngoài chỉ bảo bao quanh thành phần con bên trong.<br>
-		- VD:
-		<div class="rows">
-			<p class="match-paren" style="background-color: red">This is class match-paren</p>
-			<p class="wrap-content" style="background-color: blue">This is class wrap-content 1</p>
-			<p class="wrap-content" style="background-color: yellow">This is class wrap-content 2</p>
-		</div><br>
-		* cách sử dụng class header với thẻ p, h1 -> h4 <br>
-		- sử dụng có link hoặc không có link màu chữ mặc định đều màu đen.<br>
-		- VD:
-		<div class="rows">
-			<header class="header">
-				<h3>
-					<a href="#" title="This is header title">This is header title</a>
-				</h3>
-			</header><!-- /header -->
-		</div><br>
 		* cach sử dụng menu style ở mức cơ bản <br>
-		- sử dụng có link hoặc không có link màu chữ mặc định đều màu đen.<br>
+		- <br>
+		+ .rows .navs ul li<br>
 		- VD:
 		<div class="rows">
 			<nav class="navs">
-				<ul>
+				<ul class="navs-paren">
 					<li> <a href="#" title="item menu lv1">item menu lv1</a> </li>
-					<li> <a href="#" title="item menu lv1">item menu lv1</a> </li>
+					<li> <a href="#" title="item menu lv1">item menu lv1</a> 
+
+						<ul class="navs-childLv">
+							<li> <a href="#" title="item menu lv2">item menu lv2</a> </li>
+							<li> <a href="#" title="item menu lv2">item menu lv2</a> 
+								<ul class="navs-childLv">
+									<li> <a href="#" title="item menu lv3">item menu lv3</a> </li>
+									<li> <a href="#" title="item menu lv3">item menu lv3</a> </li>
+									<li> <a href="#" title="item menu lv3">item menu lv3</a> </li>
+									<li> <a href="#" title="item menu lv3">item menu lv3</a> </li>
+									<li> <a href="#" title="item menu lv3">item menu lv3</a> </li>
+									<li> <a href="#" title="item menu lv3">item menu lv3</a> </li>
+									<p class="clear"></p>
+								</ul>
+							</li>
+							<li> <a href="#" title="item menu lv2">item menu lv2</a> </li>
+							<li> <a href="#" title="item menu lv2">item menu lv2</a> </li>
+							<li> <a href="#" title="item menu lv2">item menu lv2</a> </li>
+							<li> <a href="#" title="item menu lv2">item menu lv2</a> </li>
+							<p class="clear"></p>
+						</ul>
+					</li>
 					<li> <a href="#" title="item menu lv1">item menu lv1</a> </li>
 					<li> <a href="#" title="item menu lv1">item menu lv1</a> </li>
 					<li> <a href="#" title="item menu lv1">item menu lv1</a> </li>
@@ -42,6 +47,98 @@
 				</ul>
 			</nav>
 		</div><br>
+		* cách sử dụng class .side để chia 2 phần.<br>
+		- chỉ hỗ trợ chia phần: 3-7, 3.5-6.5, 4-6 còn muốn chia tùy ý tự style.<br>
+		- 
+		+ .rows [.side .side-3-7] .side-child <br>
+		<div class="rows">
+			<div class="side side-3-7">
+				<div class="side-child" style="background-color: red; height: 30px;">.side-child</div>
+				<div class="side-child" style="background-color: blue; height: 30px;">.side-child</div>
+				<div class="clear"></div>
+			</div><br>
+			+ khi muốn đảo ngược thì thêm đổi .side-3-7 thành .side-3-7-flip.<br>
+			<div class="side side-3-7-flip">
+				<div class="side-child" style="background-color: red; height: 30px;"></div>
+				<div class="side-child" style="background-color: blue; height: 30px;"></div>
+				<div class="clear"></div>
+			</div>
+		</div><br>
+		* cách sử dụng class .match-paren và .wrap-content <br>
+		- khi sử dụng match-paren thì element con sẽ có chiều rộng bằng element cha.<br>
+		- khi sử dụng wrap-content thì phần viền ngoài chỉ bảo bao quanh thành phần con bên trong.<br>
+		+ .rows .match-paren, wrap-content<br>
+		- VD:
+		<div class="rows">
+			<p class="match-paren" style="background-color: red">.match-paren</p>
+			<p class="wrap-content" style="background-color: blue">.wrap-content 1</p>
+			<p class="wrap-content" style="background-color: yellow">.wrap-content 2</p>
+		</div><br>
+		* cách sử dụng class .header với thẻ p, h1 -> h4 <br>
+		- sử dụng có link hoặc không có link màu chữ mặc định đều màu đen.<br>
+		+ .rows .header h1->h3,p | a<br>
+		- VD:
+		<div class="rows">
+			<header class="header">
+				<h3>
+					<a href="#" title="This is header title">This is header title</a>
+				</h3>
+			</header><!-- /header -->
+		</div><br>
+		* cách sử dụng .cols-3 đến .cols-6 <br>
+		- <br>
+		- VD:<br>
+		<div class="rows" style="background-color: #ccc;">
+			<div class="cols-3" style="background-color: red;">.cols-3</div>
+			<div class="cols-3" style="background-color: blue;">.cols-3</div>
+			<div class="cols-3" style="background-color: yellow;">.cols-3</div>
+			<div class="clear"></div>
+		</div> <br>
+		<div class="rows" style="background-color: #ccc;">
+			<div class="cols-4" style="background-color: red;">.cols-4</div>
+			<div class="cols-4" style="background-color: blue;">.cols-4</div>
+			<div class="cols-4" style="background-color: yellow;">.cols-4</div>
+			<div class="cols-4" style="background-color: red;">.cols-4</div>
+			<div class="clear"></div>
+		</div> <br>
+		<div class="rows" style="background-color: #ccc;">
+			<div class="cols-5" style="background-color: red;">.cols-5</div>
+			<div class="cols-5" style="background-color: blue;">.cols-5</div>
+			<div class="cols-5" style="background-color: yellow;">.cols-5</div>
+			<div class="cols-5" style="background-color: red;">.cols-5</div>
+			<div class="cols-5" style="background-color: blue;">.cols-5</div>
+			<div class="clear"></div>
+		</div> <br>
+		<div class="rows" style="background-color: #ccc;">
+			<div class="cols-6" style="background-color: red;">.cols-6</div>
+			<div class="cols-6" style="background-color: blue;">.cols-6</div>
+			<div class="cols-6" style="background-color: yellow;">.cols-6</div>
+			<div class="cols-6" style="background-color: red;">.cols-6</div>
+			<div class="cols-6" style="background-color: blue;">.cols-6</div>
+			<div class="cols-6" style="background-color: yellow;">.cols-6</div>
+			<div class="clear"></div>
+		</div> <br>
+		<div class="rows" style="background-color: #ccc;">
+			<div class="cols-3-fixed" style="background-color: red;">.cols-3-fixed</div>
+			<div class="cols-3-fixed" style="background-color: blue;">.cols-3-fixed</div>
+			<div class="cols-3-fixed" style="background-color: yellow;">.cols-3-fixed</div>
+			<div class="clear"></div>
+		</div> <br>
+		<div class="rows" style="background-color: #ccc;">
+			<div class="cols-4-fixed" style="background-color: red;">.cols-4-fixed</div>
+			<div class="cols-4-fixed" style="background-color: blue;">.cols-4-fixed</div>
+			<div class="cols-4-fixed" style="background-color: yellow;">.cols-4-fixed</div>
+			<div class="cols-4-fixed" style="background-color: red;">.cols-4-fixed</div>
+			<div class="clear"></div>
+		</div> <br>
+		<div class="rows" style="background-color: #ccc;">
+			<div class="cols-5-fixed" style="background-color: red;">.cols-5-fixed</div>
+			<div class="cols-5-fixed" style="background-color: blue;">.cols-5-fixed</div>
+			<div class="cols-5-fixed" style="background-color: yellow;">.cols-5-fixed</div>
+			<div class="cols-5-fixed" style="background-color: red;">.cols-5-fixed</div>
+			<div class="cols-5-fixed" style="background-color: blue;">.cols-5-fixed</div>
+			<div class="clear"></div>
+		</div> <br>
 	</div>
 </body>
 </html>

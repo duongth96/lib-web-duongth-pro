@@ -10,6 +10,9 @@ div.rows,section.rows,article.rows{
 	width: 100%;
 	height: auto;
 }
+.clear{
+	clear: both;
+}
 /*
 * some with: 50%-50%, 30%-70%<<, 35%-65%<<, 40%-60%<<.
 * khi them .side can them .clear
@@ -19,37 +22,59 @@ div.rows,section.rows,article.rows{
 	min-height: 10%;
 
 }
+.side .side-child{
+	float: left;
+}
+.side-5-5 .side-child{
+	width: 50%;
+}
 /*
-* side 3-7
++ 3-7 7-3
 */
-.side .side-child-3-7:first-child{
+.side-3-7 .side-child:nth-child(1){
 	width: 30%;
 }
-.side .side-child-3-7:last-child{
+.side-3-7 .side-child:nth-child(2){
 	width: 70%;
 }
-.side .side-child-3-7-flip:first-child{
+.side-3-7-flip .side-child:nth-child(1){
 	width: 70%;
 }
-.side .side-child-3-7-flip:last-child{
+.side-3-7-flip .side-child:nth-child(2){
 	width: 30%;
 }
 /*
-* side 3.5-6.5
++ 35-65 65-35
 */
-.side .side-child-35-65:first-child{
+.side-35-65 .side-child:nth-child(1){
 	width: 35%;
 }
-.side .side-child-35-65:last-child{
+.side-35-65 .side-child:nth-child(2){
 	width: 65%;
 }
-.side .side-child-35-65-flip:first-child{
+.side-35-65-flip .side-child:nth-child(1){
 	width: 65%;
 }
-.side .side-child-35-65-flip:last-child{
+.side-35-65-flip .side-child:nth-child(2){
 	width: 35%;
 }
 /*
++ 4-6 6-4
+*/
+.side-4-6 .side-child:nth-child(1){
+	width: 40%;
+}
+.side-4-6 .side-child:nth-child(2){
+	width: 60%;
+}
+.side-4-6-flip .side-child:nth-child(1){
+	width: 60%;
+}
+.side-4-6-flip .side-child:nth-child(2){
+	width: 40%;
+}
+/*
+* end style side
 * style for match-paren. header
 */
 .match-paren{
@@ -75,17 +100,114 @@ div.rows,section.rows,article.rows{
 	width: auto;
 	background-color: orange;
 }
-.navs ul{
+.navs ul.navs-paren{
 	margin:auto;
 	list-style: none;
 }
-.navs ul li{
+.navs ul.navs-paren li{
 	display: block;
 	float: left;
 	height: 100%;
 	background-color: unset;
+	position: relative;
+}
+/*.navs ul.navs-paren ul.navs-childLv{
+	display: none;
+}*/
+.navs ul.navs-paren li:nth-child(odd) a{
+	color: #000;
+}
+.navs ul.navs-paren li ul.navs-childLv{
+	position: absolute;
+	background-color: yellow;
+	top: 0;
+	left: 100%;
+	display: none;
+	min-width: 50px;
+}
+.navs ul.navs-paren>li>ul.navs-childLv{
+	top: 100%;
+	left: 0;
+}
+.navs ul.navs-paren li:hover>ul.navs-childLv{
+	display: block;
+}
+/* 
+* style for cols-2
+* style for cols-3
+* style for cols-4
+* style for cols-5
+* style for cols-6
+*/
+.cols-3,.cols-4,.cols-5,.cols-6{
+	float: left;
+	box-sizing: border-box;
+}
+.cols-3{
+	width:33.3%;
+	height: auto;
+}
+.cols-4{
+	width:25%;
+	height:auto; 
+}
+.cols-5{
+	width:20%;
+	height:auto; 
+}
+.cols-6{
+	width:16.66%;
+	height:auto; 
+}
+/* 
++ cols-3-fixed;
++ cols-4-fixed;
++ cols-5-fixed;
++ cols-6-fixed;
+*/
+.cols-3-fixed,.cols-4-fixed,.cols-5-fixed,.cols-6-fixed{
+	float: left;
+	box-sizing: border-box;
+}
+.cols-3-fixed{
+	width:32.4%;
+	height: auto;
+}
+.cols-3-fixed:nth-child(2){
+	margin-left: 1.4%;
+}
+.cols-3-fixed:nth-child(3){
+	margin-left: 1.4%;
 }
 
-.clear{
-	clear: both;
+.cols-4-fixed{
+	width:24%;
+	height:auto; 
 }
+.cols-4-fixed:nth-child(2){
+	margin-left: 1.3%;
+}
+.cols-4-fixed:nth-child(3){
+	margin-left: 1.3%;
+}
+.cols-4-fixed:nth-child(4){
+	margin-left: 1.3%;
+}
+
+.cols-5-fixed{
+	width:18.8%;
+	height:auto; 
+}
+.cols-5-fixed:nth-child(2){
+	margin-left: 1.5%;
+}
+.cols-5-fixed:nth-child(3){
+	margin-left: 1.5%;
+}
+.cols-5-fixed:nth-child(4){
+	margin-left: 1.5%;
+}
+.cols-5-fixed:nth-child(5){
+	margin-left: 1.5%;
+}
+
